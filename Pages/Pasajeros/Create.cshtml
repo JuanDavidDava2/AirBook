@@ -1,0 +1,54 @@
+﻿@page
+@model AirBook.Pages.Pasajeros.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Nuevo Pasajero</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Pasajeros.IdPasajero" class="control-label"></label>
+                <input asp-for="Pasajeros.IdPasajero" class="form-control" />
+                <span asp-validation-for="Pasajeros.IdPasajero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pasajeros.Nombre" class="control-label"></label>
+                <input asp-for="Pasajeros.Nombre" class="form-control" />
+                <span asp-validation-for="Pasajeros.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pasajeros.Apellido" class="control-label"></label>
+                <input asp-for="Pasajeros.Apellido" class="form-control" />
+                <span asp-validation-for="Pasajeros.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pasajeros.Email" class="control-label"></label>
+                <input asp-for="Pasajeros.Email" class="form-control" />
+                <span asp-validation-for="Pasajeros.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pasajeros.Telefono" class="control-label"></label>
+                <input asp-for="Pasajeros.Telefono" class="form-control" />
+                <span asp-validation-for="Pasajeros.Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
