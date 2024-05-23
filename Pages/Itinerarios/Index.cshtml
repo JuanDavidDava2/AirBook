@@ -1,0 +1,50 @@
+﻿@page
+@model AirBook.Pages.Itinerarios.IndexModel
+@{
+}
+<h1>Index Itinerarios</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Itinerario[0].IdItinerario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itinerario[0].IdReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itinerario[0].Reserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Itinerario[0].Detalle)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Itinerario)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdItinerario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Detalle)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdAerolinea" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdAerolinea" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
