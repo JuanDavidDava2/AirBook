@@ -45,12 +45,12 @@ namespace AirBook.Pages.Aerolineas
                 return NotFound();
             }
 
-            var category = await _context.Aerolineas.FindAsync(id);
+            var aerolinea = await _context.Aerolineas.FindAsync(id);
 
-            if (category != null)
+            if (aerolinea != null)
             {
-                Aerolinea = category;
-                _context.Aerolineas.Remove(category);
+                Aerolinea = aerolinea;
+                _context.Aerolineas.Remove(aerolinea);
                 await _context.SaveChangesAsync();
             }
             return RedirectToPage("./Index");

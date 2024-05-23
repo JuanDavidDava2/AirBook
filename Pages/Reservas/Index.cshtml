@@ -1,0 +1,61 @@
+﻿@page
+@model AirBook.Pages.Reservas.IndexModel
+@{
+}
+
+<h1>Reservas</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Pasajero.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Pasajero.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Vuelo.Origen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Vuelo.Destino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].FechaReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reservas[0].Estado)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Reservas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pasajero.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pasajero.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vuelo.Origen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vuelo.Destino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
