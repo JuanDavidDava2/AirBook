@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Razor;
 using AirBook.Data;
 using AirBook.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace AirBook.Pages.Aerolineas
+namespace AirBook.Pages.Vuelos
 {
     public class CreateModel : PageModel
     {
@@ -17,20 +17,21 @@ namespace AirBook.Pages.Aerolineas
 
         public IActionResult OnGet()
         {
+            ViewData["AerolineaId"] = new SelectList(_context.Aerolineas, "IdAerolinea", "NombreAerolinea");
             return Page();
         }
 
         [BindProperty]
-        public Reserva Reserva { get; set; } = default!;
+        public Vuelo Vuelo { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Reservas == null || Reserva == null)
+            if (!ModelState.IsValid || _context.Vuelos == null || Vuelo == null)
             {
                 return Page();
             }
 
-            _context.Reservas.Add(Reserva);
+            _context.Vuelos.Add(Vuelo);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

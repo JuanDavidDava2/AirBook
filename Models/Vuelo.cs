@@ -11,6 +11,6 @@
         public DateTime HoraSalida { get; set; }
         public DateTime HoraLlegada { get; set; }
         public decimal Precio { get; set; }
-        public ICollection<Reserva> Reservas { get; set; }
+        public ICollection<Reserva>? Reservas { get; set; } = default!;
     }
 }
