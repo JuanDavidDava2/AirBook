@@ -1,16 +1,18 @@
 ﻿@page
-@model AirBook.Pages.Vuelos.CreateModel
+@model AirBook.Pages.Vuelos.EditModel
 @{
-    ViewData["Title"] = "Crear Vuelo";
+	ViewData["Title"] = "Edit";
 }
 
-<h1>Crear Vuelo</h1>
+<h1>Edit</h1>
 
+<h4>Vuelo</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Vuelo.IdVuelo" />
             <div class="form-group">
                 <label asp-for="Vuelo.NumeroVuelo" class="control-label"></label>
                 <input asp-for="Vuelo.NumeroVuelo" class="form-control" />
