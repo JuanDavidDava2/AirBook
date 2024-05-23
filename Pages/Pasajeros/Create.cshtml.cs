@@ -9,7 +9,12 @@ namespace AirBook.Pages.Pasajeros
 {
     public class CreateModel : PageModel
     {
-        private readonly AirBookDbContext _context;
+       
+        private readonly AirBookDbContext _context; // Asegúrate de que el contexto está inyectado correctamente
+
+        [BindProperty]
+        public Pasajero Pasajero { get; set; } // Asegúrate de que el modelo está correctamente definido
+
         public CreateModel(AirBookDbContext context)
         {
             _context = context;
@@ -20,18 +25,14 @@ namespace AirBook.Pages.Pasajeros
             return Page();
         }
 
-        [BindProperty]
-        public Pasajero Pasajeros { get; set; } = default!;
-
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Pasajeros == null || Pasajeros == null)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Pasajeros.Add(Pasajeros);
-
+            _context.Pasajeros.Add(Pasajero);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -1,0 +1,43 @@
+﻿@page
+@model AirBook.Pages.Pasajeros.EditModel
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-sumary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="Pasajero.IdPasajero" />
+			<div class="form-group">
+				<label asp-fpr="Pasajero.Nombre" class="control-label"></label>
+				<input asp-for="Pasajero.Nombre" class="form-control" />
+				<span asp-validation-for="Pasajero.Nombre" class="text-dager"></span>
+			</div>
+			<div class="form-group">
+				<label asp-fpr="Pasajero.Apellido" class="control-label"></label>
+				<input asp-for="Pasajero.Apellido" class="form-control" />
+				<span asp-validation-for="Pasajero.Apellido" class="text-dager"></span>
+			</div>
+			<div class="form-group">
+				<label asp-fpr="Pasajero.Email" class="control-label"></label>
+				<input asp-for="Pasajero.Email" class="form-control" />
+				<span asp-validation-for="Pasajero.Email" class="text-dager"></span>
+			</div>
+			<div class="form-group">
+				<label asp-fpr="Pasajero.Telefono" class="control-label"></label>
+				<input asp-for="Pasajero.Telefono" class="form-control" />
+				<span asp-validation-for="Pasajero.Telefono" class="text-dager"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="save" class="btn btn-success" />
+				<a asp-page="./Index" class="btn btn-primary">Back to List</a>
+			</div>
+		</form>
+	</div>
+</div>
+
