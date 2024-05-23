@@ -12,25 +12,25 @@
 	<hr />
 	<dl class="row">
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Pasajeros.Nombre)
+			@Html.DisplayNameFor(model => model.Pasajero.Nombre)
 		</dt>
 		<dd class="col-sm-10">
-			@Html.DisplayNameFor(model => model.Pasajeros.Nombre)
+			@Html.DisplayNameFor(model => model.Pasajero.Nombre)
 		</dd>
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Pasajeros.Apellido)
+			@Html.DisplayNameFor(model => model.Pasajero.Apellido)
 		</dt>
 		<dd class="col-sm-10">
-			@Html.DisplayNameFor(model => model.Pasajeros.Apellido)
+			@Html.DisplayNameFor(model => model.Pasajero.Apellido)
 		</dd>
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Pasajeros.Email)
+			@Html.DisplayNameFor(model => model.Pasajero.Email)
 		</dt>
 		<dd class="col-sm-10">
-			@Html.DisplayNameFor(model => model.Pasajeros.Email)
+			@Html.DisplayNameFor(model => model.Pasajero.Email)
 		</dd>
 		<dt class="col-sm-2">
-			@Html.DisplayNameFor(model => model.Pasajeros.Telefono)
+			@Html.DisplayNameFor(model => model.Pasajero.Telefono)
 		</dt>
 		<dd class="col-sm-10">
 			@Html.DisplayNameFor(model => model.Pasajero.Telefono)
@@ -38,7 +38,7 @@
 	</dl>
 
 	<form method="post">
-		<input type="hidden" asp-for="Pasajeros.Id" />
+		<input type="hidden" asp-for="Pasajero.IdPasajero" />
 		<input type="submit" value="Delete" class="btn btn-danger" />
 		<a asp-page="./Index" class="btn btn-primary">Back to List</a>
 	</form>

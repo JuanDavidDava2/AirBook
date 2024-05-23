@@ -15,7 +15,7 @@ namespace AirBook.Pages.Pasajeros
 		}
 
 		[BindProperty]
-		public Personas Pasajero { get; set; }
+		public Pasajero Pasajero { get; set; }
 
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
@@ -24,10 +24,10 @@ namespace AirBook.Pages.Pasajeros
 				return NotFound();
 			}
 
-			var category = await _context.Pasajeros.FirstOrDefaultAsync(m => m.IdPasajero == id);
+			var pasajero = await _context.Pasajeros.FirstOrDefaultAsync(m => m.IdPasajero == id);
 
 
-			if (category == null)
+			if (pasajero == null)
 			{
 				return NotFound();
 			}

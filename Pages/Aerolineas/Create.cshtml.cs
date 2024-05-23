@@ -14,23 +14,21 @@ namespace AirBook.Pages.Aerolineas
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
             return Page();
         }
-
         [BindProperty]
-        public Reserva Reserva { get; set; } = default!;
+
+        public Aerolinea Aerolinea { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Reservas == null || Reserva == null)
+            if (!ModelState.IsValid || _context.Aerolineas == null || Aerolinea == null)
             {
                 return Page();
             }
-
-            _context.Reservas.Add(Reserva);
+            _context.Aerolineas.Add(Aerolinea);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

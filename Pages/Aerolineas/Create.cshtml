@@ -4,40 +4,22 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Crear Reserva</h1>
+<h1>Create</h1>
 
+<h4>Aerolinea</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Reserva.IdPasajero" class="control-label">Pasajero</label>
-                <select asp-for="Reserva.IdPasajero" class="form-control" asp-items="@(new SelectList(ViewBag.Pasajeros, "IdPasajero", "NombreCompleto"))">
-                    <option value="">Seleccione un pasajero</option>
-                </select>
-                <span asp-validation-for="Reserva.IdPasajero" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Reserva.IdVuelo" class="control-label">Vuelo</label>
-                <select asp-for="Reserva.IdVuelo" class="form-control" asp-items="@(new SelectList(ViewBag.Vuelos, "IdVuelo", "Ruta"))">
-                    <option value="">Seleccione un vuelo</option>
-                </select>
-                <span asp-validation-for="Reserva.IdVuelo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Reserva.FechaReserva" class="control-label"></label>
-                <input asp-for="Reserva.FechaReserva" class="form-control" />
-                <span asp-validation-for="Reserva.FechaReserva" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Reserva.Estado" class="control-label"></label>
-                <input asp-for="Reserva.Estado" class="form-control" />
-                <span asp-validation-for="Reserva.Estado" class="text-danger"></span>
+                <label asp-for="Aerolinea.NombreAerolinea" class="control-label"></label>
+                <input asp-for="Aerolinea.NombreAerolinea" class="form-control" />
+                <span asp-validation-for="Aerolinea.NombreAerolinea" class="text-danger"></span>
             </div>
             <div class="form-group mt-3">
                 <input type="submit" value="Create" class="btn btn-success" />
-                <a asp-page="Index" class="btn btn-primary">Volver a la lista</a>
+                <a asp-page="Index" class="btn btn-primary">Back to list</a>
             </div>
         </form>
     </div>
