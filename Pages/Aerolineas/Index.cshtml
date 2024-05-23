@@ -1,0 +1,32 @@
+﻿@page
+@model AirBook.Pages.Aerolineas.IndexModel
+@{
+}
+<h1>Index Aerolineas</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Aerolineas[0].NombreAerolinea)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Aerolineas)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAerolinea)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdAerolinea" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdAerolinea" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

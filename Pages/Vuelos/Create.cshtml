@@ -1,0 +1,60 @@
+﻿@page
+@model AirBook.Pages.Vuelos.CreateModel
+@{
+    ViewData["Title"] = "Crear Vuelo";
+}
+
+<h1>Crear Vuelo</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vuelo.NumeroVuelo" class="control-label"></label>
+                <input asp-for="Vuelo.NumeroVuelo" class="form-control" />
+                <span asp-validation-for="Vuelo.NumeroVuelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.AerolineaId" class="control-label">Aerolínea</label>
+                <select asp-for="Vuelo.AerolineaId" class="form-control" asp-items="ViewBag.AerolineaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.Origen" class="control-label"></label>
+                <input asp-for="Vuelo.Origen" class="form-control" />
+                <span asp-validation-for="Vuelo.Origen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.Destino" class="control-label"></label>
+                <input asp-for="Vuelo.Destino" class="form-control" />
+                <span asp-validation-for="Vuelo.Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.HoraSalida" class="control-label"></label>
+                <input asp-for="Vuelo.HoraSalida" class="form-control" />
+                <span asp-validation-for="Vuelo.HoraSalida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.HoraLlegada" class="control-label"></label>
+                <input asp-for="Vuelo.HoraLlegada" class="form-control" />
+                <span asp-validation-for="Vuelo.HoraLlegada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vuelo.Precio" class="control-label"></label>
+                <input asp-for="Vuelo.Precio" class="form-control" />
+                <span asp-validation-for="Vuelo.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
