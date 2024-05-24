@@ -35,8 +35,7 @@
                 <td>@Html.DisplayFor(modelItem => vuelo.HoraLlegada)</td>
                 <td>@Html.DisplayFor(modelItem => vuelo.Precio)</td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@vuelo.IdVuelo" class="btn btn-primary">Editar</a>
-                    <a asp-page="./Details" asp-route-id="@vuelo.IdVuelo" class="btn btn-info">Detalles</a>
+                    <a asp-page="./Edit" asp-route-id="@vuelo.IdVuelo" class="btn btn-warning">Editar</a>
                     <a asp-page="./Delete" asp-route-id="@vuelo.IdVuelo" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>

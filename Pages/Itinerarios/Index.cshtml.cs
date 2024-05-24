@@ -5,7 +5,7 @@ using AirBook.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-namespace AirBook.Pages.Aerolineas
+namespace AirBook.Pages.Itinerarios
 {
     [Authorize]
     public class IndexModel : PageModel
@@ -17,12 +17,14 @@ namespace AirBook.Pages.Aerolineas
             _context = context;
         }
 
-        public IList<Aerolinea> Aerolineas { get; set; } = default!;
+        public IList<Itinerario> Itinerarios { get; set; } = default!;
         public async Task OnGetAsync()
         {
-            if (_context.Aerolineas != null)
+            if (_context.Itinerarios != null)
             {
-                Aerolineas = await _context.Aerolineas.ToListAsync();
+                Itinerarios = await _context.Itinerarios
+                    .Include(r => r.Reserva)
+                    .ToListAsync();
             }
         }
     }

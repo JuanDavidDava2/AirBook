@@ -55,6 +55,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Estado)
                 </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdReserva" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.IdReserva" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

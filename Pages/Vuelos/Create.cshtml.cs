@@ -17,7 +17,7 @@ namespace AirBook.Pages.Vuelos
 
         public IActionResult OnGet()
         {
-            ViewData["AerolineaId"] = new SelectList(_context.Aerolineas, "IdAerolinea", "NombreAerolinea");
+            //ViewData["AerolineaId"] = new SelectList(_context.Aerolineas, "IdAerolinea", "NombreAerolinea");
             return Page();
         }
 

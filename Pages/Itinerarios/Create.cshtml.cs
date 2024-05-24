@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Razor;
 using AirBook.Data;
 using AirBook.Models;
 
-namespace AirBook.Pages.Aerolineas
+namespace AirBook.Pages.Itinerarios
 {
     public class CreateModel : PageModel
     {
@@ -20,15 +20,15 @@ namespace AirBook.Pages.Aerolineas
         }
         [BindProperty]
 
-        public Aerolinea Aerolinea { get; set; } = default!;
+        public Itinerario Itinerario { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Aerolineas == null || Aerolinea == null)
+            if (!ModelState.IsValid || _context.Itinerarios == null || Itinerario == null)
             {
                 return Page();
             }
-            _context.Aerolineas.Add(Aerolinea);
+            _context.Itinerarios.Add(Itinerario);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
