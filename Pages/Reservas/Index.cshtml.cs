@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using AirBook.Models;
 using AirBook.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AirBook.Pages.Reservas
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly AirBookDbContext _context;
