@@ -1,0 +1,44 @@
+﻿@page
+@model AirBook.Pages.Vuelos.IndexModel
+@{
+    ViewData["Title"] = "Vuelos";
+}
+
+<h1>Vuelos</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Crear nuevo vuelo</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].NumeroVuelo)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].Aerolinea.NombreAerolinea)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].Origen)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].Destino)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].HoraSalida)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].HoraLlegada)</th>
+            <th>@Html.DisplayNameFor(model => model.Vuelos[0].Precio)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vuelo in Model.Vuelos)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => vuelo.NumeroVuelo)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.Aerolinea.NombreAerolinea)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.Origen)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.Destino)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.HoraSalida)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.HoraLlegada)</td>
+                <td>@Html.DisplayFor(modelItem => vuelo.Precio)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@vuelo.IdVuelo" class="btn btn-warning">Editar</a>
+                    <a asp-page="./Delete" asp-route-id="@vuelo.IdVuelo" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -12,6 +12,12 @@ namespace AirBook
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";// Si no esta autenticado, cargue la pagina login.
+            });
+
             builder.Services.AddDbContext<AirBookDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AirbookDb"))
             );

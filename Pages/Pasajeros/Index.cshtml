@@ -1,0 +1,58 @@
+﻿@page
+@model AirBook.Pages.Pasajeros.IndexModel
+@{
+    ViewData["Title"] = "Index Pasajeros";
+}
+<h1>Index Pasajeros</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasajeros[0].IdPasajero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasajeros[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasajeros[0].Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasajeros[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pasajeros[0].Telefono)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Pasajeros)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPasajero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.IdPasajero" class="btn btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@item.IdPasajero" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
