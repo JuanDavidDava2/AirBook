@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using AirBook.Data;
 using AirBook.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AirBook.Pages.Vuelos
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly AirBookDbContext _context;
